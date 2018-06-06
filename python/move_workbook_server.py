@@ -367,10 +367,12 @@ def main():
     workbook_name = raw_input("\nName of workbook to move: ")
     dest_server = raw_input("\nDestination server: ")
     dest_username = raw_input("\nDestination server username: ")
-
+    source_password = "a#5qsboaZ%Xg"
+    dest_password = "a#5qsboaZ%Xg"
+	
     print("\n*Moving '{0}' workbook to the 'default' project in {1}*".format(workbook_name, dest_server))
-    source_password = getpass.getpass("Password for {0} on {1}: ".format(source_username, source_server))
-    dest_password = getpass.getpass("Password for {0} on {1}: ".format(dest_username, dest_server))
+    #source_password = getpass.getpass("Password for {0} on {1}: ".format(source_username, source_server))
+    #dest_password = getpass.getpass("Password for {0} on {1}: ".format(dest_username, dest_server))
 
     ##### STEP 1: Sign in #####
     print("\n1. Signing in to both sites to obtain authentication tokens")
@@ -394,11 +396,11 @@ def main():
 
     ##### STEP 5: Publish to new site #####
     print("\n5. Publishing workbook to {0}".format(dest_server))
-    publish_workbook(dest_server, dest_auth_token, dest_site_id, workbook_filename, dest_project_id)
+    #publish_workbook(dest_server, dest_auth_token, dest_site_id, workbook_filename, dest_project_id)
 
     ##### STEP 6: Deleting workbook from the source site #####
     print("\n6. Deleting workbook from the original site and temp file")
-    delete_workbook(source_server, source_auth_token, source_site_id, workbook_id, workbook_filename)
+    #delete_workbook(source_server, source_auth_token, source_site_id, workbook_id, workbook_filename)
 
     ##### STEP 7: Sign out #####
     print("\n7. Signing out and invalidating the authentication token")
